@@ -1,0 +1,120 @@
+*** This file contains the pseudocode for the assignment1.py file ***
+
+d_thr = DISTANCE TO GRAB THE TOKEN  
+d_thr2 = THE ROBOT IS CLOSE ENOUGH TO THE SILVER TOKEN 
+d_front_thr = THE ROBOT CLOSE ENOUGH TO THE GOLDEN TOKEN
+angle_thr = ANGLE TO GRAB THE TOKEN
+
+R=Robot() ## Instance of the class Robot ##
+
+def drive(speed, seconds): ## function for setting a linear velocity ##
+    
+    R.motors[0].m0.power = speed 
+    R.motors[0].m1.power = speed
+    time.sleep(seconds) 
+    R.motors[0].m0.power = 0
+    R.motors[0].m1.power = 0
+
+def turn(speed, seconds):  ## function for setting an angular velocity ##
+   
+    R.motors[0].m0.power = speed 
+    R.motors[0].m1.power = -speed
+    time.sleep(seconds) 
+    R.motors[0].m0.power = 0
+    R.motors[0].m1.power = 0
+
+
+def find_silver_token(): ## FUNCTION TO FIND THE SILVER TOKEN ##
+    dist=100
+    for token in R.see():
+        if token.dist < dist and token.info.marker_type is MARKER_TOKEN_SILVER:
+            dist = token.dist
+            rot_y = token.rot_y
+    if dist==100:
+        return -1,-1
+    else:
+        return dist,rot_y 
+
+def find_golden_token():## function to find the golden token ##
+    dist=100
+    for token in R.see():
+        if token.dist < dist and token.info.marker_type is MARKER_TOKEN_GOLD:
+            dist=token.dist
+            rot_y=token.rot_y
+    if dist==100:
+        return -1,-1
+    else:
+        return dist,rot_y
+
+def find_front_golden_token(): ## function to find the front golden token ##
+	dist=100
+	for token in R.see():
+		if token.dist < dist and token.info.marker_type is MARKER_TOKEN_GOLD and -20 < token.rot_y < 20:
+			dist=token.dist
+			rot_y=token.rot_y
+	if dist==100:
+		return -1, -1
+	else:
+		return dist, rot_y
+
+def find_right_golden_token(): ## function to find the right golden token ##
+	dist=100
+	for token in R.see():
+		if token.dist < dist and token.info.marker_type is MARKER_TOKEN_GOLD and 70 < token.rot_y < 110:
+			dist=token.dist
+			rot_y=token.rot_y
+	if dist==100:
+		return -1, -1
+	else:
+		return dist, rot_y
+
+
+def find_left_golden_token(): ## function to find the left golden token ##
+	dist=100
+	for token in R.see():
+		if token.dist < dist and token.info.marker_type is MARKER_TOKEN_GOLD and -110< token.rot_y < -70:
+			dist=token.dist
+			rot_y=token.rot_y
+	if dist==100:
+		return -1, -1
+	else:
+		return dist, rot_y
+
+def choose_turn(): ## function to choose which side the robot should turn##
+    distance_from_left = find_left_golden_token()
+    distance_from_right = find_right_golden_token()
+    if distance_from_right < distance_from_left:
+        return 1
+    else:
+        return 0
+
+while 1:
+	dist_silver_token, angle_silver_token = find_silver_token() ## passing parameters to the function to find the silver token##
+	if dist_silver_token LESS THAN dist_thr AND abs(angle_silver_token) LESS THAN angle_thr:
+		Grab
+		Turn
+		Release
+		Turn (opposite direction)
+	else if dist_silver_token LESS THAN dist_thr2:
+		if angle_silver_token > angle_thr:
+			alligning left 
+		else if angle_silver_token < - angle_thr:
+			alligning right
+		else: 
+			drive forward
+
+	else:
+		dist_front_golden_token = find_front_golden_token()
+
+		if dist_front_golden_token lesser than dist_front_thr:
+			detected golden tokens
+			choose_turn()
+			if anti_clockwise return 1
+				rotate anticlockwise   
+			else:
+				rotate clockwise   
+
+
+	
+
+
