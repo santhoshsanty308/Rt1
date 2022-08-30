@@ -1,8 +1,9 @@
 ### Rt1 ###
-### INTRODUCTION ###: Assignment 1 in RESEARCH TRACK-1, mainly concentrates on simulating the code on the python simulator for running a specified task with the help of a self-governing robot. The robot must travel in the counter-clockwise direction by grabbing up the silver token and placing those silver token behind by turning the robot in any one direction.
+### INTRODUCTION ###: 
+      Assignment 1 in RESEARCH TRACK-1, mainly concentrates on simulating the code on the python simulator for running a specified task with the help of a self-governing robot. The robot must travel in the counter-clockwise direction by grabbing up the silver token and placing those silver token behind by turning the robot in any one direction.
 
 ## AIM ##
-To develop a code for a robot to complete the task within the specified environment in the Python simulator. To Write a python script for achieving this robot"s behaviour:
+      To develop a code for a robot to complete the task within the specified environment in the Python simulator. To Write a python script for achieving this robot"s behaviour:
 
 In this assignment the code must be designed to run the robot without detecting the boxes around all the directions (from -180.0 degrees to 180.0 degrees)
 constantly drive the robot around the circuit in the counter-clockwise direction
