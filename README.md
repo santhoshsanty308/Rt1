@@ -4,12 +4,12 @@
 
 ## AIM ##
 To develop a code for a robot to complete the task within the specified environment in the Python simulator. 
-To Write a python script for achieving this robot"s behaviour:
 
-In this assignment the code must be designed to run the robot without detecting the boxes around all the directions (from -180.0 degrees to 180.0 degrees)
-constantly drive the robot around the circuit in the counter-clockwise direction
-avoid touching the golden boxes
-when the robot is close to a silver box, it should grab it, and move it behind itself #PROCEDURE:
+To Write a python script for achieving this robot"s behaviour:
+ In this assignment the code must be designed to run the robot without detecting the boxes around all the directions (from -180.0 degrees to 180.0 degrees)
+Constantly drive the robot around the circuit in the counter-clockwise direction
+Avoid touching the golden boxes
+When the robot is close to a silver box, it should grab it, and move it behind itself #PROCEDURE:
 ## LINEAR VELOCITY FOR THE ROBOT ##:
 Firstly in order to move the robot forward a function called DRIVE() has been defined. This function has two motors to activate mo and m1. when a set of values is given to the motors, the robot moves forward if it is (+), else drives backward for (-).
 
