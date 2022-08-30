@@ -60,7 +60,7 @@ If distance from robot to right golden token is lesser than distance from robot 
 
 In front, left, right golden token functions respective range of angles are given for orientation of the robot to visualise the golden token and avoid them.
 
- ## RESULT ##:
+ ## RESULT:
 -The above-mentioned procedures are used to run the robot in the specified path without disturbing the environment.
 
 -The code for this assignment has been stored in ASSIGNMENT-1.
